@@ -1,0 +1,81 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class MiniProject extends Billing{
+ public static void main(String args[]) throws IOException, ArrayIndexOutOfBoundsException,  ArithmeticException {
+String choice,yn,user_name,password;
+ Scanner obj = new Scanner(System.in);
+int y=1,end=0;
+Billing a = new Billing();
+for(int i=1;i<4;){
+System.out.print("ENTER USERNAME: ");
+user_name= obj.nextLine();
+System.out.print("ENTER PASSWORD: ");
+password = obj.nextLine();
+for(int o=1; o<=5; o++){
+    a.available[o]=20;
+}
+   if(user_name.equals("CHIRAG") && password.equals("7569")){
+for(int x=1; x==1;){
+System.out.println("-------------------------------------------");
+System.out.println("!!!!!!!! WELCOME TO EXPRESS WAYS !!!!!!!!!!");
+System.out.println("...........................................");
+System.out.println("|| [1] VIEW DESTINATION     		 ||");
+System.out.println("|| [2] VIEW PICKUP POINTS              	 ||");
+System.out.println("|| [3] RESERVATION                       ||");
+System.out.println("|| [4] PAYMENT STATUS                    ||");
+System.out.println("|| [5] VIEW INVOICE                      ||");
+System.out.println("|| [6] EXIT                              ||");
+System.out.println("...........................................");
+System.out.println("------------------------------------------\n");
+for(x=1; x==1;){
+System.out.print("ENTER CHOICE: ");
+choice = obj.nextLine();
+if (choice.equals("1"))
+a.destination();
+else if(choice.equals("2"))
+	a.pickupPoint();
+else if (choice.equals("3"))
+	a.ticketBooking();
+else if (choice.equals("4"))
+	a.bill();
+else if (choice.equals("5"))
+	a.viewBill();
+else if(choice.equals("6"))
+	a.exit();
+else{
+System.out.println("Invalid Input!");
+x=1;
+}
+for(y=1; y==1;){
+if(end==1){
+break;
+}
+else
+{
+	System.out.print("Do you want continue [Y/N]: ");
+   	yn = obj.nextLine();
+}
+    if (yn.equalsIgnoreCase("y")){
+    	x=1;
+    	y=0;
+}
+    else if (yn.equalsIgnoreCase("n")){
+    System.out.println("\nThank You!!!");
+    break;
+}
+else{
+    System.out.println("Invalid Input!!!");
+    y=1;
+          }
+      }
+    } i=6;
+ }
+}
+else{
+System.out.println("\nInvalid user or password!\n");
+i++;
+       }
+    }
+    }
+}

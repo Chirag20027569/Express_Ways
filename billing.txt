@@ -1,0 +1,118 @@
+class Billing extends Booking{
+	int end=0;
+public void bill()
+{
+	int x;
+	int s=0;
+for(x=1; x==1;)
+     {						
+	System.out.print("ENTER PASSENGER'S NAME: ");
+	search = obj.nextLine();
+	 s=1;
+for(int b=0;b<z;b++){
+if(search.equalsIgnoreCase(name[b][0])){
+System.out.println("***************************************");
+System.out.println("**        PASSENGER  DETAILS         **");
+System.out.println("***************************************");
+System.out.println("TICKET NUMBER: " +rand1 );
+System.out.println("PASSENGER'S NAME: " + name[b][0]);
+System.out.println("PASSENGER'S DESTINATION : " + name[b][1]);
+System.out.println("PASSENGER'S PICKUP POINT : " + ticketP[b][0]);
+System.out.println("FARE PRICE: Rs" + ticketF[b][0]);
+System.out.println("BUS TIME: " + ticketT[b][0]);
+System.out.println("NO. OF PASSENGERS: " +  no_passenger[b][0]);
+System.out.println("NO. OF PASSENGERS WITH DISCOUNT: "+ no_passenger[b][1]);
+System.out.println("***************************************");
+System.out.println("***************************************");
+s=0;
+x=0;							
+if(name[b][2].equals("x")){
+System.out.println("PASSENGER HAS ALDREADY PAID!");
+x=0;
+}
+else{
+name[b][2]="x";
+System.out.println("\nPASSENGER'S TOTAL FARE: Rs "+ticketF[b][2]);
+System.out.print("ENTER AMOUNT TO PAY: ");
+pay[b] = Double.parseDouble(obj.nextLine());
+change[b]=pay[b]-ticketF[b][2];				
+if(change[b]<0){
+System.out.println("Invalid Input!");
+	x=1;
+	}
+else{
+System.out.println("CHANGE: Rs "+change[b]);
+System.out.println("");
+x=0;
+	    }
+	    }
+	}
+      }
+}
+if (s==1){
+System.out.println("\nPASSENGER'S NAME NOT FOUND!\n");
+for(int q=1; q==1;){						
+System.out.print("Do you wish to continue with this transaction? [Y/N]: ");
+again=obj.nextLine();
+if(again.equalsIgnoreCase("y")){
+q=0;
+       }
+else if (again.equalsIgnoreCase("n")){
+q=0;
+x=0;
+}
+else{
+System.out.println("\nInvalid input!\n");
+}
+	}
+      }	
+  }		            
+
+
+public void viewBill()
+{
+int x;
+for(int sx=1; sx<=3;){
+ System.out.print("SEARCH PASSENGER'S NAME: ");
+    search = obj.nextLine();
+    	int s=1;
+for(x=0; x<=z; x++){
+if(search.equalsIgnoreCase(name[x][0])){
+System.out.println("***************************************");  System.out.println("**        PASSENGER  DETAILS        **");
+System.out.println("***************************************");
+System.out.println("TICKET NUMBER: " +rand1 );
+System.out.println("PASSENGER'S NAME: " +name[x][0]);
+System.out.println("PASSENGER'S DESTINATION : " +name[x][1]);
+System.out.println("PASSENGER'S PICKUP POINT : " + ticketP[x][0]);
+System.out.println("FARE PRICE: Rs" + ticketF[x][0]);
+System.out.println("BUS TIME: " + ticketT[x][0]);
+System.out.println("NO. OF PASSENGERS: " + no_passenger[x][0]);
+System.out.println("NO. OF PASSENGERS WITH DISCOUNT: "+no_passenger[x][1]);
+System.out.println("TOTAL FARE PRICE: Rs " + ticketF[x][2]);
+if(name[x][2].equals("x")){
+System.out.println("PAY: Rs " +pay[x]);
+System.out.println("CHANGE: Rs " +change[x]);
+System.out.println("STATUS: PAID");
+ }
+else{
+    System.out.println("STATUS: NOT PAID");
+}
+System.out.println("***************************************");
+System.out.println("***************************************");
+    s=0;
+sx=4;
+     }
+}					
+if (s==1){
+System.out.println("Passenger's Name not found!");
+sx++;
+   }		
+}
+}
+public void exit(){
+	int x;
+	x=0;
+	end=1;
+	System.out.println("Thank You!");
+	}
+}

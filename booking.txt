@@ -1,0 +1,165 @@
+import java.util.Random;
+abstract class Booking extends Initialize{
+	Random rand = new Random();
+	int rand1 = rand.nextInt(10000);
+	
+public void destination(){
+	int x;
+ System.out.println("---------------------------------------");
+ System.out.println("--     CITIES      |  FARE  | SEAT  --");
+ System.out.println("---------------------------------------");
+ System.out.println("-> 1]MYSORE       | Rs500  |   "+available[1]+"   $$");
+ System.out.println("-> 2]GOA          | Rs850  |   "+available[2]+"   $$");
+ System.out.println("-> 3]HYDERABAD    | Rs950  |   "+available[3]+"   $$");
+ System.out.println("-> 4]KANYAKUMARI  | Rs800  |   "+available[4]+"   $$");
+ System.out.println("-> 5]MUMBAI       | Rs2000 |   "+available[5]+"   $$");
+ System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+ System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+ System.out.println(" SENIOR CITIZEN with 20% DISCOUNT!!!\n");	
+ x=0;
+}
+
+public void pickupPoint()
+{
+	int x;
+	System.out.println("---------------------------------------");
+	System.out.println("--   PICKUP POINTS      |   TIME       --");
+	System.out.println("---------------------------------------");
+	System.out.println("-> 1]MEJESTIC          |   7:30       ");
+	System.out.println("-> 2]ANAND RAO CIRCLE  |   8:00       ");
+	System.out.println("-> 3]INDIRA NAGAR      |   6:45       ");
+	System.out.println("-> 4]KALA MANDIR       |   9:00       ");
+	System.out.println("-> 5]SILK BOARD        |   10:15      ");
+	System.out.println("-> 6]WHITEFEILD        |   9:35       ");
+	System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+	System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+	x=0;
+}
+public void ticketBooking()
+{
+	int x,print=0,i,j = 0;
+System.out.println("---------------------------------------");
+System.out.println("--     CITIES      |  FARE  |  SEAT  --");
+System.out.println("---------------------------------------");
+System.out.println("-> 1]MYSORE       | Rs500  |   "+available[1]+"   $$");
+System.out.println("-> 2]GOA          | Rs850  |   "+available[2]+"   $$");
+System.out.println("-> 3]HYDERABAD    | Rs950  |   "+available[3]+"   $$");
+System.out.println("-> 4]KANYAKUMARI  | Rs800  |   "+available[4]+"   $$");
+System.out.println("-> 5]MUMBAI       | Rs2000 |   "+available[5]+"   $$");
+System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.");
+System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+System.out.println(" SENIOR CITIZEN with 20% DISCOUNT!!!\n");
+if((available[1]==0)&&(available[2]==0)&&(available[3]==0)&&(available[4]==0)&&(available[5]==0))
+{
+   System.out.println("Sorry, We don't  have available seats for all Cities!");
+    x=0;						
+  }
+   else{
+   for(x=1; x==1;){
+    System.out.print("\nENTER PASSENGER'S NAME: ");
+    name[z][0] = obj.nextLine();						
+     x=0;	
+  }
+    										
+    				
+  for(x=1; x==1;){
+   System.out.print("ENTER CITY [number]: ");
+    to = Integer.parseInt(obj.nextLine());
+    if(to<1 || to>5){
+    System.out.println("Invalid Input!");
+    x=1;
+    }			
+    for(int d=1; d<=5; d++){
+   if(to==d){
+    if(available[to]==0){
+     System.out.println("Sorry, We don't have available seats!");
+    x=1;
+   }
+    x=0;
+       }
+    }
+  }
+    					
+System.out.println("---------------------------------------");
+System.out.println("--   PICKUP POINTS      |   TIME       --");
+System.out.println("---------------------------------------");
+System.out.println("-> 1]MEJESTIC          |   7:30       ");
+System.out.println("-> 2]ANAND RAO CIRCLE  |   8:00       ");
+System.out.println("-> 3]INDIRA NAGAR      |   6:45       ");
+System.out.println("-> 4]KALA MANDIR       |   9:00       ");
+System.out.println("-> 5]SILK BOARD        |   10:15      ");
+System.out.println("-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-");
+System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n");
+for(x=1; x==1;){
+  System.out.print("ENTER PICKUP POINT [number]: ");
+  to = Integer.parseInt(obj.nextLine());
+if(to<1 || to>6){
+System.out.println("Invalid Input!");
+x=1;
+    }
+x=0;
+}	
+String dest[] = { " ", "MYSORE", "GOA", "HYDERABAD", "KANYAKUMARI", "MUMBAI"};
+String pick[] = {" ", "MEJESTIC","ANAND RAO CIRCLE","INDIRA NAGAR","KALA MANDIR","SILK BOARD"};
+String time[] = { " ","7:30","8:00","6:45","9:00","10:15","9:45"};
+double fare[] = { 0,500,850,950,800,2000};
+name[z][1] = dest[to];
+ticketF[z][0] = fare[to];
+ticketP[z][0] = pick[to];
+ticketT[z][0] = time[to];
+for(x=1; x==1;){
+System.out.print("HOW MANY PASSENGERS ARE YOU?: ");
+no_passenger[z][0] = Integer.parseInt(obj.nextLine());
+for(int p=1; p<=5; p++){
+if(to==p){
+print=1;
+available[to] = available[to]-no_passenger[z][0];
+if(available[to]<0){
+System.out.print("Sorry, We don't have seat available for " +no_passenger[z][0] +" person\n");
+available[to] = available[to]+no_passenger[z][0];
+System.out.print("We only have " +available[to] +" seat available\n");
+x=1;
+print=0;
+}
+else{
+x=0;
+    }
+  }
+}		
+}
+    					
+for(x=1;x==1;){
+System.out.print("HOW MANY PASSENGERS HAVE DISCOUNT?: ");
+no_passenger[z][1] = Integer.parseInt(obj.nextLine());
+if(no_passenger[z][1]>no_passenger[z][0]){
+System.out.println("Invalid Input!");
+System.out.println("No. of Passengers are only " +no_passenger[z][0] +"!");
+x=1;
+ }
+else{
+break;
+}
+}
+if(print==1){
+System.out.println("\n***************************************");
+System.out.println("**         PASSENGER  DETAILS         **");
+System.out.println("***************************************");
+System.out.println("TICKET NUMBER: " +rand1 );
+System.out.println("PASSENGER'S NAME: " +name[z][0]);
+System.out.println("PASSENGER'S DESTINATION : " +name[z][1]);
+System.out.println("PASSENGER'S PICKUP POINT : " + ticketP[z][0]);
+System.out.println("FARE PRICE: Rs " + ticketF[z][0]);
+System.out.println("BUS TIME:  " + ticketT[z][0]);
+System.out.println("NO. OF PASSENGERS: " + no_passenger[z][0]);
+System.out.println("NO. OF PASSENGERS WITH DISCOUNT: "+ no_passenger[z][1]);
+System.out.println("***************************************");
+System.out.println("***************************************\n");
+name[z][2]="0";
+double discount=(ticketF[z][0]-(ticketF[z][0]*0.2))*no_passenger[z][1];
+ticketF[z][2]= ((no_passenger[z][0]-no_passenger[z][1])*ticketF[z][0])+discount;
+x=0;
+}
+z++;
+}				
+}
+}
